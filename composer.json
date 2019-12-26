@@ -24,11 +24,7 @@
             "gleisonnanet\\CnpjGratis\\": "src/"
         }
     },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0"
-        }
-    },
+   
      "suggest": {
         "gleisonnanet/cpf-gratis": "Permite consulta de CPF no site da receita",
         "gleisonnanet/cep-gratis": "Permite consulta de CEP no site dos Correios"
