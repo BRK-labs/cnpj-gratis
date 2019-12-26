@@ -1,0 +1,36 @@
+{
+    "name": "gleisonnanet/cnpj-gratis",
+    "description": "Com esse pacote você poderá consultar, gratuitamente, CNPJs diretamente no site da receita.",
+    "keywords": ["consulta", "receita", "cnpj", "php"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gleison de souza luiz",
+            "email": "gleisonnanet@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "symfony/dom-crawler": "^5.0",
+        "symfony/css-selector": "^5.0",
+        "ext-gd":"*",
+        "ext-curl":"*",
+        "gleisonnanet/utils": "^2.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "gleisonnanet\\CnpjGratis\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0"
+        }
+    },
+     "suggest": {
+        "gleisonnanet/cpf-gratis": "Permite consulta de CPF no site da receita",
+        "gleisonnanet/cep-gratis": "Permite consulta de CEP no site dos Correios"
+    },
+    "minimum-stability": "stable"
+}
