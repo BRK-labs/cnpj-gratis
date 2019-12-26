@@ -15,7 +15,8 @@
         "symfony/css-selector": "^5.0",
         "ext-gd":"*",
         "ext-curl":"*",
-        "gleisonnanet/utils": "^2.0"
+          "gleisonnanet/utils": "^2.0@dev"
+ 
     },
 
     "autoload": {
