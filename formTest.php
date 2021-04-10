@@ -2,13 +2,13 @@
 require 'vendor/autoload.php';
 
 if (isset($_POST['cnpj'])) {
-    var_dump(\gleisonnanet\CnpjGratis\CnpjGratis::consulta($_POST['cnpj'], $_POST['captcha'], $_POST['cookie']));
+    var_dump(\BrkLabs\CnpjGratis\CnpjGratis::consulta($_POST['cnpj'], $_POST['captcha'], $_POST['cookie']));
     die;
 }
 
 $cnpj = '45543915000858';
 
-$params = \gleisonnanet\CnpjGratis\CnpjGratis::getParams();
+$params = \BrkLabs\CnpjGratis\CnpjGratis::getParams();
 
 ?>
 

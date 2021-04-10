@@ -2,7 +2,7 @@
 
 require_once '../vendor/autoload.php';
 
-use gleisonnanet\CnpjGratis\CnpjGratis;
+use BrkLabs\CnpjGratis\CnpjGratis;
 
 
 if(isset($_POST['captcha']) && isset($_POST['cookie']) && isset($_POST['cnpj'])){

@@ -1,6 +1,6 @@
 <?php
 
-namespace gleisonnanet\CnpjGratis;
+namespace BrkLabs\CnpjGratis;
 
 use PHPUnit_Framework_TestCase;
 
