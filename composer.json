@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "brk-labs\\cnpj-gratis\\": "src/"
+            "BrkLabs\\CnpjGratis\\": "src/"
         }
     },
     "suggest": {

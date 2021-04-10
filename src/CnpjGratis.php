@@ -1,9 +1,8 @@
 <?php
 
-namespace gleisonnanet\CnpjGratis;
+namespace BrkLabs\CnpjGratis;
 
 use Exception;
-use gleisonnanet\Utils\Utils as Utils;
 use Symfony\Component\DomCrawler\Crawler;
 
 class CnpjGratis {
@@ -55,8 +54,9 @@ class CnpjGratis {
     {
         $result = array();
 
-        if (!Utils::isCnpj($cnpj))
+        if (strlen($cnpj) !== 14) {
             throw new Exception('O CNPJ informado não é válido');
+        }
 
         $headers = [
             "Host: www.receita.fazenda.gov.br",
@@ -71,7 +71,7 @@ class CnpjGratis {
 
         $params = [
             'origem' => 'comprovante',
-            'cnpj' => Utils::unmask($cnpj),
+            'cnpj' => $cnpj,
             'txtTexto_captcha_serpro_gov_br' => $captchaSolved,
             'submit1' => 'Consultar',
             'search_type' => 'cnpj'
