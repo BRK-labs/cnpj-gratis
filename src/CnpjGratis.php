@@ -13,17 +13,17 @@ class CnpjGratis {
      */
     public static function getParams()
     {
-        $data = self::request('https://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp');
+        $data = self::request('http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp');
         $cookie = $data['headers']['Set-Cookie'];
-        $image = self::request('https://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/captcha/gerarCaptcha.asp', [], [
+        $image = self::request('http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/captcha/gerarCaptcha.asp', [], [
             "Pragma: no-cache",
-            "Origin: https://www.receita.fazenda.gov.br",
+            "Origin: http://www.receita.fazenda.gov.br",
             "Host: servicos.receita.fazenda.gov.br",
             "User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0",
             "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
             "Accept-Language: pt-BR,pt;q=0.8,en-US;q=0.5,en;q=0.3",
             "Accept-Encoding: gzip, deflate",
-            "Referer: https://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp",
+            "Referer: http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao.asp",
             "Cookie: flag=1; $cookie",
             "Connection: keep-alive"
         ]);
@@ -57,7 +57,7 @@ class CnpjGratis {
             "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             "Accept-Language: pt-BR,pt;q=0.9,en;q=0.8",
             "Accept-Encoding: gzip, deflate",
-            "Referer: https://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao_CS.asp",
+            "Referer: http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/Cnpjreva_Solicitacao_CS.asp",
             "Cookie: $cookie",
             "Connection: keep-alive"
         ];
@@ -67,7 +67,7 @@ class CnpjGratis {
             'txtTexto_captcha_serpro_gov_br' => $captchaSolved,
             'search_type' => 'cnpj'
         ];
-        $data = self::request('https://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/valida.asp', $params, $headers);
+        $data = self::request('http://servicos.receita.fazenda.gov.br/Servicos/cnpjreva/valida.asp', $params, $headers);
         $crawler = new Crawler($data['response']);
         if(strpos($crawler->html(), '<b>Erro na Consulta</b>') !== false){
             throw new \RuntimeException('Erro ao consultar. Confira se você digitou corretamente os caracteres fornecidos na imagem.', 98);
